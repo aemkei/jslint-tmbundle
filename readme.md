@@ -6,7 +6,7 @@
 
 ### Usage ###
 
-* ⌘S - Qucik validate
+* ⌘S - Quick Validate
 * ⌃⇧V - Validate Syntax
 
 ### Installation ###
@@ -22,4 +22,8 @@ Copy and paste the following block to your terminal:
 
 * [Node.js](nodejs.org/)
 
-_Hint:_ If you see `nodes: command not found`, make sure your `PATH` variable is correctly set. (TextMate > Preferences > Advanced > Shell Variables > PATH)
+### Troubleshooting ###
+
+If you see `nodes: command not found`, make sure your `PATH` variable is correctly set.    
+
+TextMate > Preferences > Advanced > Shell Variables > PATH

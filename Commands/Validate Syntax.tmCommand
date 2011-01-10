@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+  <string>. "$TM_SUPPORT_PATH/lib/webpreview.sh"
+  html_header "JSLint - Javascript Validator"
+  node "$TM_BUNDLE_SUPPORT/jslint.js"
+  html_footer
+  </string>	<key>fallbackInput</key>
+	<string>scope</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>^V</string>
+	<key>name</key>
+	<string>Validate Syntax</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>uuid</key>
+	<string>EC121F15-2F76-464C-92D3-0C7999CB35BD</string>
+</dict>
+</plist>

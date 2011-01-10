@@ -1,5 +1,10 @@
 # JSLint Textmate Bundle #
 
+
+A JavaScript validation and code quality bundle for TextMate using the [latest](https://github.com/douglascrockford/JSLint) [JSLint](jslint.com) version. Read more about it [here](http://tech.groups.yahoo.com/group/jslint_com/message/1730).
+
+### Features ###
+
 * Quick validation on file save (displays a tooltip on error only).
 * Detailed infos (errors, unused variables, implied globals).
 * Custom validation settings.
@@ -24,7 +29,7 @@ You can customize the JSLint options using the "`Edit Settings`" command.
 
 ### Requires ###
 
-* [Node.js](nodejs.org/)
+* [Node.js](http://nodejs.org/)
 
 ### Troubleshooting ###
 

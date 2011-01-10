@@ -24,6 +24,6 @@ Copy and paste the following block to your terminal:
 
 ### Troubleshooting ###
 
-If you see `nodes: command not found`, make sure your `PATH` variable is correctly set.    
+If you see `node: command not found`, make sure your `PATH` variable is correctly set.    
 
 TextMate > Preferences > Advanced > Shell Variables > PATH

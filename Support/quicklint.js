@@ -17,7 +17,7 @@ function finish_file(){
 
 function check_errors(errors){
   if (errors){
-    write(errors.length + " Error" + (errors.length > 1 ? "s" : ""));
+    write(errors.length + " error" + (errors.length > 1 ? "s" : ""));
   }  
 }
 

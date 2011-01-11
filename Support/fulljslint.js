@@ -1127,7 +1127,7 @@ var JSLINT = (function () {
         };
     }
 
-    function warning(m, t, a, b, c, d) {
+    function warning(m, t, a, b, c, d, is_error) {
         var ch, l, w;
         t = t || nexttoken;
         if (t.id === '(end)') {  // `~
@@ -1136,7 +1136,7 @@ var JSLINT = (function () {
         l = t.line || 0;
         ch = t.from || 0;
         w = {
-            id: '(error)',
+            id: is_error ? '(error)' : '(warning)',
             raw: m,
             evidence: lines[l - 1] || '',
             line: l,
@@ -1166,7 +1166,7 @@ var JSLINT = (function () {
     }
 
     function error(m, t, a, b, c, d) {
-        var w = warning(m, t, a, b, c, d);
+        var w = warning(m, t, a, b, c, d, true);
         quit("Stopping, unable to continue.", w.line, w.character);
     }
 

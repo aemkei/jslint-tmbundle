@@ -21,7 +21,7 @@ function initialize() {
   
   check_success(success);
   check_errors(data.errors);
-  check("Unused Variables", data.unuseds);
+  check("Unused Variables", data.unused);
   check("Implied Globals", data.implieds);
   
   finish_file();

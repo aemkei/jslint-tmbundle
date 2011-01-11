@@ -50,7 +50,10 @@ function check_success(success) {
   }
 }
 
-function mark_evidence(error) {
+function mark_evidence(error, undefined) {
+    
+  if (error.evidence === undefined) { return; }
+  
   var mark = "";
   
   for (var i = 0; i < error.character-1; i++){
@@ -59,7 +62,7 @@ function mark_evidence(error) {
   
   mark = "\n" + mark + "^";
   
-  return error.evidence + mark;
+  return "<pre>" + error.evidence + mark + "</pre>";
 }
 
 function link(text, options){
@@ -99,7 +102,7 @@ function check_errors(errors){
       if (!error){ return; }
       
       write(link("Line " + error.line + ": " + error.reason, error));
-      write("<pre>" + mark_evidence(error) + "</pre>");
+      write(mark_evidence(error));
     });
   }  
 }

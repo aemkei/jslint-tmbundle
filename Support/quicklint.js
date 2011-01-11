@@ -15,10 +15,36 @@ function finish_file(){
   sys.puts(body);
 }
 
-function check_errors(errors){
+function message(title, count){
+  return count + " " + title + (count > 1 ? "s" : "");
+}
+
+function check_errors(entries){
+  
+  var errors = 0,
+    warnings = 0,
+    messages = [];
+
+
+  if (entries){
+    entries.forEach(function(entry) {
+      if (entry && (entry.id == "(warning)")){
+        warnings++;
+      } else {
+        errors++
+      }
+    });
+  }
+  
   if (errors){
-    write(errors.length + " error" + (errors.length > 1 ? "s" : ""));
+    messages.push(message("error", errors));
   }  
+  
+  if (warnings){
+    messages.push(message("warning", warnings));
+  }
+  
+  write(messages.join(", "));
 }
 
 function initialize() {

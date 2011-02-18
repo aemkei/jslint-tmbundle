@@ -1334,13 +1334,13 @@ var JSLINT = (function () {
         };
     }
 
-    function warn(message, offender, a, b, c, d) {
+    function warn(message, offender, a, b, c, d, is_error) {
         var character, line, warning;
         offender = offender || nexttoken;  // `~
         line = offender.line || 0;
         character = offender.from || 0;
         warning = {
-            id: '(error)',
+            id: is_error ? '(error)' : '(warning)',
             raw: message,
             evidence: lines[line - 1] || '',
             line: line,
@@ -1370,7 +1370,7 @@ var JSLINT = (function () {
     }
 
     function fail(message, offender, a, b, c, d) {
-        var warning = warn(message, offender, a, b, c, d);
+        var warning = warn(message, offender, a, b, c, d, true);
         quit(bundle.stopping, warning.line, warning.character);
     }
 

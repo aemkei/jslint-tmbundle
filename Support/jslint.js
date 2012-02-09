@@ -1,6 +1,6 @@
 var env = process.env || process.ENV,
   file = env.TM_FILEPATH,
-  sys = require("sys"),
+  sys = require("util"),
   fs = require("fs"),
   evals = process.binding('evals'),
   body = "",
@@ -10,8 +10,8 @@ var env = process.env || process.ENV,
 
 function initialize() {
   
-  evals.Script.runInThisContext(js_lint_lib);
-  evals.Script.runInThisContext(options_file);
+  evals.NodeScript.runInThisContext(js_lint_lib);
+  evals.NodeScript.runInThisContext(options_file);
   
   var input = fs.readFileSync(file, 'utf8'),
     success = JSLINT(input, LINT_OPTIONS || {}),
